@@ -21,7 +21,7 @@ function sm_reverse() {
 }
 
 function sm_filename() {
-    perl -wlne 'print $4 if /^(\s*)(\d*)(\s*)([^:]*)$/'
+    perl -wlne 'print $4 . "\n" if /^(\s*)(\d*)(\s*)([^:]*)$/' | head -n1
 }
 
 function sm() {
