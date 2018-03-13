@@ -11,7 +11,7 @@
 
     Usages:
         sm keyword                                  # search and print
-        sm keyword | pbcopy                         # search and put into clipboard
-        vism keyword                                # update snippet (I personally use vim)
+        smp keyword                                 # search and put into clipboard, you may need alias `xclip -selection primary` to `pbcopy` on Linux
+        smvi keyword                                # update snippet (I personally use vim)
 
 ![](sm.gif)

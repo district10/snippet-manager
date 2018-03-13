@@ -28,10 +28,18 @@ function sm_guard() {
     if [ -z $1 ]; then echo "Usage:\n\tsm <keyword>"; false; else true; fi
 }
 
+function sm_clip() {
+    (pbcopy || xclip -selection primary)
+}
+
 function sm() {
     sm_guard $1 && export smtmp=`mktemp` && cat $(sm_backwardlines $smtmp `pt -S --group "$@" | cat -n | tee $smtmp | percol | sm_linenum` | sm_reverse | sm_filename)
 }
 
-function vism() {
+function smp() {
+    sm_guard $1 && export smtmp=`mktemp` && cat $(sm_backwardlines $smtmp `pt -S --group "$@" | cat -n | tee $smtmp | percol | sm_linenum` | sm_reverse | sm_filename) | sm_clip
+}
+
+function smvi() {
     sm_guard $1 && export smtmp=`mktemp` && $EDITOR $(sm_backwardlines $smtmp `pt -S --group "$@" | cat -n | tee $smtmp | percol | sm_linenum` | sm_reverse | sm_filename)
 }
