@@ -13,7 +13,7 @@ function sm_range() {
 }
 
 function sm_backwardlines() {
-    sm_range $1 $(($2-${sm_n_line:-10})) $2
+    sm_range $1 $(($2-${sm_n_line:-50})) $2
 }
 
 function sm_reverse() {
@@ -24,10 +24,14 @@ function sm_filename() {
     perl -wlne 'print $4 . "\n" if /^(\s*)(\d*)(\s*)([^:]*)$/' | head -n1
 }
 
+function sm_guard() {
+    if [ -z $1 ]; then echo "Usage:\n\tsm <keyword>"; false; else true; fi
+}
+
 function sm() {
-    export smtmp=`mktemp` && cat $(sm_backwardlines $smtmp `pt -S --group "$@" | cat -n | tee $smtmp | percol | sm_linenum` | sm_reverse | sm_filename)
+    sm_guard $1 && export smtmp=`mktemp` && cat $(sm_backwardlines $smtmp `pt -S --group "$@" | cat -n | tee $smtmp | percol | sm_linenum` | sm_reverse | sm_filename)
 }
 
 function vism() {
-    export smtmp=`mktemp` && $EDITOR $(sm_backwardlines $smtmp `pt -S --group "$@" | cat -n | tee $smtmp | percol | sm_linenum` | sm_reverse | sm_filename)
+    sm_guard $1 && export smtmp=`mktemp` && $EDITOR $(sm_backwardlines $smtmp `pt -S --group "$@" | cat -n | tee $smtmp | percol | sm_linenum` | sm_reverse | sm_filename)
 }
