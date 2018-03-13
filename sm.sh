@@ -9,7 +9,7 @@ function sm_linenum() {
 }
 
 function sm_range() {
-    cat $1 | sed -n $(sm_relu $2),$(sm_relu ${3})p
+    cat $1 | sed -n $(sm_relu $2),$(sm_relu $3)p
 }
 
 function sm_backwardlines() {
