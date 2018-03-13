@@ -12,5 +12,6 @@
     Usages:
         sm keyword                                  # search and print
         sm keyword | pbcopy                         # search and put into clipboard
+        vism keyword                                # update snippet (I personally use vim)
 
 ![](sm.gif)

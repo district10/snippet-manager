@@ -27,3 +27,7 @@ function sm_filename() {
 function sm() {
     export smtmp=`mktemp` && cat $(sm_backwardlines $smtmp `pt -S --group "$@" | cat -n | tee $smtmp | percol | sm_linenum` | sm_reverse | sm_filename)
 }
+
+function vism() {
+    export smtmp=`mktemp` && $EDITOR $(sm_backwardlines $smtmp `pt -S --group "$@" | cat -n | tee $smtmp | percol | sm_linenum` | sm_reverse | sm_filename)
+}
