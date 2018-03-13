@@ -41,5 +41,5 @@ function smp() {
 }
 
 function smvi() {
-    sm_guard $1 && export smtmp=`mktemp` && $EDITOR $(sm_backwardlines $smtmp `pt -S --group "$@" | cat -n | tee $smtmp | percol | sm_linenum` | sm_reverse | sm_filename)
+    sm_guard $1 && export smtmp=`mktemp` && ${EDITOR:-vi} $(sm_backwardlines $smtmp `pt -S --group "$@" | cat -n | tee $smtmp | percol | sm_linenum` | sm_reverse | sm_filename)
 }
