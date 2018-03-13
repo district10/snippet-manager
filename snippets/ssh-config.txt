@@ -1,0 +1,6 @@
+# vi ~/.ssh/config, ssh jumper
+
+Host jumper
+HostName        example.com
+Port            10024
+User            root
