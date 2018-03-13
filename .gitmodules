@@ -1,0 +1,3 @@
+[submodule "private"]
+	path = private
+	url = git@gitlab.com:district10/snippets_private.git
