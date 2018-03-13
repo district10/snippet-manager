@@ -1,25 +1,29 @@
 #!/bin/bash
 
-function relu() {
-    if [[ $1 -le 0 ]]; then echo "1"; else echo $1; fi;
+function sm_relu() {
+    if [[ $1 -le 0 ]]; then echo "1"; else echo $1; fi
 }
 
-function linenum() {
+function sm_linenum() {
     perl -wlne 'print $1 if /(\d+)/'
 }
 
-function range() {
-    cat $1 | sed -n $(relu $2),$(relu ${3})p
+function sm_range() {
+    cat $1 | sed -n $(sm_relu $2),$(sm_relu ${3})p
 }
 
-function backward30line() {
-    range $1 $(($2-10)) $2
+function sm_backwardlines() {
+    sm_range $1 $(($2-${sm_n_line:-10})) $2
 }
 
-function reverse() {
-    sed -n '1!G;h;$p' -
+function sm_reverse() {
+    sed -n '1!G;h;$p'
+}
+
+function sm_filename() {
+    perl -wlne 'print $4 if /^(\s*)(\d*)(\s*)([^:]*)$/'
 }
 
 function sm() {
-    export smtmp=`mktemp` && backward30line $smtmp `pt --group $@ | cat -n | tee $smtmp | percol | linenum`
+    export smtmp=`mktemp` && cat $(sm_backwardlines $smtmp `pt --group "$@" | cat -n | tee $smtmp | percol | sm_linenum` | sm_reverse | sm_filename)
 }
