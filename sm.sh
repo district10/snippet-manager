@@ -9,11 +9,11 @@ function sm_linenum() {
 }
 
 function sm_range() {
-    cat $1 | sed -n $(sm_relu $2),$(sm_relu $3)p
+    cat "$1" | sed -n $(sm_relu $2),$(sm_relu $3)p
 }
 
 function sm_backwardlines() {
-    sm_range $1 $(($2-${sm_n_line:-50})) $2
+    sm_range "$1" $(($2-${sm_n_line:-50})) $2
 }
 
 function sm_reverse() {
@@ -24,8 +24,12 @@ function sm_filename() {
     perl -wlne 'print $4 . "\n" if /^(\s*)(\d*)(\s*)([^:]*)$/' | head -n1
 }
 
+function sm_usage() {
+    echo "Usage:\n\tsm <keyword>\t\t\t(search in current working directory/在当前所在目录搜索)\n\tq <keyword>\t\t\t(search in this folder/在本目录搜索)"
+}
+
 function sm_guard() {
-    if [ -z $1 ]; then echo "Usage:\n\tsm <keyword>"; false; else true; fi
+    if [ -z $1 ]; then sm_usage; false; else true; fi
 }
 
 function sm_clip() {
@@ -33,18 +37,18 @@ function sm_clip() {
 }
 
 function sm() {
-    sm_guard $1 && export smtmp=`mktemp` && cat $(sm_backwardlines $smtmp `pt -S --group "$@" | cat -n | tee $smtmp | percol | sm_linenum` | sm_reverse | sm_filename)
+    sm_guard $1 && export smtmp=`mktemp` && cat "$(sm_backwardlines $smtmp `pt -S --group "$@" | cat -n | tee $smtmp | percol | sm_linenum` | sm_reverse | sm_filename)"
 }
 
 function csm() {
-    sm_guard $1 && export smtmp=`mktemp` && cat $(sm_backwardlines $smtmp `pt -S --group "$@" | cat -n | tee $smtmp | percol | sm_linenum` | sm_reverse | sm_filename) | sm_clip
+    sm_guard $1 && export smtmp=`mktemp` && cat "$(sm_backwardlines $smtmp `pt -S --group "$@" | cat -n | tee $smtmp | percol | sm_linenum` | sm_reverse | sm_filename)" | sm_clip
 }
 
 function vism() {
-    sm_guard $1 && export smtmp=`mktemp` && ${EDITOR:-vi} $(sm_backwardlines $smtmp `pt -S --group "$@" | cat -n | tee $smtmp | percol | sm_linenum` | sm_reverse | sm_filename)
+    sm_guard $1 && export smtmp=`mktemp` && ${EDITOR:-vi} "$(sm_backwardlines $smtmp `pt -S --group "$@" | cat -n | tee $smtmp | percol | sm_linenum` | sm_reverse | sm_filename)"
 }
 
 export sm_dir=`pwd`
-function q() { (cd $sm_dir; sm $@) }
-function cq() { (cd $sm_dir; csm $@) }
-function viq() { (cd $sm_dir; vism $@) }
+function q() { (cd "$sm_dir"; sm $@) }
+function cq() { (cd "$sm_dir"; csm $@) }
+function viq() { (cd "$sm_dir"; vism $@) }
