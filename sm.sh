@@ -43,3 +43,8 @@ function csm() {
 function vism() {
     sm_guard $1 && export smtmp=`mktemp` && ${EDITOR:-vi} $(sm_backwardlines $smtmp `pt -S --group "$@" | cat -n | tee $smtmp | percol | sm_linenum` | sm_reverse | sm_filename)
 }
+
+export sm_dir=`pwd`
+function q() { (cd $sm_dir; sm $@) }
+function cq() { (cd $sm_dir; csm $@) }
+function viq() { (cd $sm_dir; vism $@) }
