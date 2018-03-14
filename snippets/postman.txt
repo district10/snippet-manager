@@ -1,0 +1,20 @@
+// postman
+var env = (pm.request.url + "").split('//')[1].split('.')[0];
+pm.globals.set("otras-env", env);
+// globals,environment,variables;
+// get,set,unset, has, ...
+
+var jsonData = pm.response.json();
+pm.globals.set("bearer", "Bearer " + jsonData.jwt_token);
+
+pm.globals.set("uploaded-file", responseBody);
+
+// lodash
+pm.globals.set("lodash_result", _.compact([0, 1, false, 2, '']).join(",/"));
+
+// 在 url, header, payload 里面都可以用变量,
+// 除了普通变量, 还有一些是预置的动态变量
+{{var}}
+{{$guid}}
+{{$timestamp}}
+{{$randomInt}}

@@ -1,0 +1,3 @@
+domElement.addEventListener( 'mousedown', function(event) { // mousemove, mouseup, wheel
+    // ...
+}, false );

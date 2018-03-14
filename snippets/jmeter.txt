@@ -1,0 +1,29 @@
+// jMeter
+vars.put("offset", (${__threadNum}-1)*${dealers_per_batch});
+
+var numberOfCarPlates = parseInt(vars.get("car_plate_numbers_#"));
+for (var i = 0; i < numberOfCarPlates; i++) {
+    var car_plate_number = vars.get("car_plate_numbers_" + (i + 1));
+    ...
+}
+
+var sa2carPlateNumbers = JSON.parse(vars.get("sa2carPlateNumbers")) || {};
+
+vars.put("pre_inspection_maps", prev.getResponseDataAsString());
+
+${__Random(17500000000,17501111111,telephone)}
+
+${__javaScript('侧视'+'一二三四五六七八九十'[parseInt(Date.now()*Math.random())%10]+'甲乙丙丁戊己庚辛壬癸'[Date.now()%10],name)}
+
+// 哪个方便用哪个, groovy 也不错
+${__groovy(new Date().format("yyyy-MM-dd HH:mm:ss"),)}
+
+${__javaScript(new Date(Date.now() - (24-8)*60*60*1000).toISOString())}
+
+// 记得用 Function Helper 生成和测试这些 one liner, 但可惜
+// function helper 不会帮你转义逗号, 你需要自己加
+${__javaScript(var a=[];[1\,2\,3\,4\,5\,6\,7\,8\,9].forEach(function(i){return a.push("0"+i);});a=a.sort(function(){return Math.random() < 0.5;}).splice(0\,1+parseInt( Math.random()*9)).sort();JSON.stringify(a) ,)}
+
+${__javaScript(var x=new Date(Date.now()+Math.random()*10*24*60*60*1000);x.setMinutes(0);x.setSeconds(0);x.setMilliseconds(0);x.toISOString(),)}
+
+// "${selected_owner_id}" !=== ""
