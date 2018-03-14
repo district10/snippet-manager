@@ -36,10 +36,10 @@ function sm() {
     sm_guard $1 && export smtmp=`mktemp` && cat $(sm_backwardlines $smtmp `pt -S --group "$@" | cat -n | tee $smtmp | percol | sm_linenum` | sm_reverse | sm_filename)
 }
 
-function smp() {
+function csm() {
     sm_guard $1 && export smtmp=`mktemp` && cat $(sm_backwardlines $smtmp `pt -S --group "$@" | cat -n | tee $smtmp | percol | sm_linenum` | sm_reverse | sm_filename) | sm_clip
 }
 
-function smvi() {
+function vism() {
     sm_guard $1 && export smtmp=`mktemp` && ${EDITOR:-vi} $(sm_backwardlines $smtmp `pt -S --group "$@" | cat -n | tee $smtmp | percol | sm_linenum` | sm_reverse | sm_filename)
 }

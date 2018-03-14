@@ -1,3 +1,4 @@
+// recursive, recurse
 // 拍扁, concat 如果接收到一个 obj, 就 push, 如果是一个 list, 就合并
 const flatten = arr => arr.reduce((a, v) => a.concat(v), []);
 
