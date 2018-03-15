@@ -53,7 +53,7 @@ function vism() {
         ${EDITOR:-vi} "$(sm_backwardlines $smtmp `pt -S --group "$@" | cat -n | tee $smtmp | percol | sm_linenum` | sm_reverse | sm_filename)"
 }
 
-export sm_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+export sm_dir="`dirname "$0"`"
 function q() { (cd "$sm_dir"; sm $@) }
 function cq() { (cd "$sm_dir"; csm $@) }
 function viq() { (cd "$sm_dir"; vism $@) }
