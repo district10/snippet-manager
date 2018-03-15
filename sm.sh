@@ -37,15 +37,20 @@ function sm_clip() {
 }
 
 function sm() {
-    sm_guard $1 && export smtmp=`mktemp` && cat "$(sm_backwardlines $smtmp `pt -S --group "$@" | cat -n | tee $smtmp | percol | sm_linenum` | sm_reverse | sm_filename)"
+    sm_guard $1 && export smtmp=`mktemp` && \
+        cat "$(sm_backwardlines $smtmp `pt -S --group "$@" | cat -n | tee $smtmp | percol | sm_linenum` | sm_reverse | sm_filename)" | \
+        pt -C ${sm_n_line:-50} "$@"
 }
 
 function csm() {
-    sm_guard $1 && export smtmp=`mktemp` && cat "$(sm_backwardlines $smtmp `pt -S --group "$@" | cat -n | tee $smtmp | percol | sm_linenum` | sm_reverse | sm_filename)" | sm_clip
+    sm_guard $1 && export smtmp=`mktemp` && \
+        cat "$(sm_backwardlines $smtmp `pt -S --group "$@" | cat -n | tee $smtmp | percol | sm_linenum` | sm_reverse | sm_filename)" | \
+        sm_clip
 }
 
 function vism() {
-    sm_guard $1 && export smtmp=`mktemp` && ${EDITOR:-vi} "$(sm_backwardlines $smtmp `pt -S --group "$@" | cat -n | tee $smtmp | percol | sm_linenum` | sm_reverse | sm_filename)"
+    sm_guard $1 && export smtmp=`mktemp` && \
+        ${EDITOR:-vi} "$(sm_backwardlines $smtmp `pt -S --group "$@" | cat -n | tee $smtmp | percol | sm_linenum` | sm_reverse | sm_filename)"
 }
 
 export sm_dir=`pwd`
