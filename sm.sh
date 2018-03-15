@@ -57,3 +57,6 @@ export sm_dir="`dirname "$0"`"
 function q() { (cd "$sm_dir"; sm $@) }
 function cq() { (cd "$sm_dir"; csm $@) }
 function viq() { (cd "$sm_dir"; vism $@) }
+function nq() {
+    ${EDITOR:-vi} "$sm_dir/snippets/$1"
+}
