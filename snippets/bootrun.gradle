@@ -1,0 +1,5 @@
+bootRun {
+    if (project.hasProperty('debugArgs')) {
+        jvmArgs project.debugArgs
+    }
+}

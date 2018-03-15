@@ -1,0 +1,11 @@
+publishing {
+    repositories {
+        maven {
+            credentials {
+                username "username"
+                password "password"
+            }
+            url = "http://mavenurl:8081/repository/mvnlocal/"
+        }
+    }
+}

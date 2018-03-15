@@ -1,0 +1,10 @@
+spring:
+  redis:
+    host: url
+    database: 5
+    port: 6380
+    ssl: true
+    password: password
+  data:
+    mongodb:
+      uri: mongodb://url:27017/db_name

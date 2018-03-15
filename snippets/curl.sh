@@ -12,3 +12,7 @@ curl -X POST https://requestb.in/yx5thyyx \
   -H 'content-type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW' \
   -F filekey1=@/private/tmp/file1 \
   -F filekey2=@/private/tmp/file2.json
+
+// -v           # --verbose
+// -vv          # Even more verbose
+// -u user:pass # --user: Authentication

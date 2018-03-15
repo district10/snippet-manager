@@ -1,0 +1,17 @@
+buildscript {
+    ext {
+        springBootVersion = '1.5.4.RELEASE'
+        junitPlatformVersion = '1.0.0'
+        junitJupiterVersion = '5.0.0'
+    }
+    repositories {
+        mavenLocal()
+        maven { url "http://url:port/repository/mvngroup/" }
+    }
+    dependencies {
+        classpath "org.springframework.cloud:spring-cloud-contract-gradle-plugin:${verifierVersion}"
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath("org.junit.platform:junit-platform-gradle-plugin:${junitPlatformVersion}")
+        classpath("org.owasp:dependency-check-gradle:2.1.1")
+    }
+}

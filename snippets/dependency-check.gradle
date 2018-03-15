@@ -1,0 +1,8 @@
+dependencyCheck {
+    suppressionFile="${projectDir}/dependency-check-suppress.xml"
+    autoUpdate = false
+    failOnError = false
+    data {
+        directory="${projectDir}/"
+    }
+}

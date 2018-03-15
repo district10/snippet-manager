@@ -39,7 +39,7 @@ function sm_clip() {
 function sm() {
     sm_guard $1 && export smtmp=`mktemp` && \
         cat "$(sm_backwardlines $smtmp `pt -S --group "$@" | cat -n | tee $smtmp | percol | sm_linenum` | sm_reverse | sm_filename)" | \
-        pt -C ${sm_n_line:-50} "$@"
+        pt -S -C ${sm_n_line:-50} "$@"
 }
 
 function csm() {
