@@ -1,3 +1,3 @@
 brew cask install iterm2
-brew install cmake
+brew install ghostscript
 brew services start redis
