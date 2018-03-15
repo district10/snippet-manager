@@ -1,3 +1,6 @@
 [submodule "private"]
 	path = private
 	url = git@gitlab.com:district10/snippets_private.git
+[submodule "temporary"]
+	path = temporary
+	url = git@gitlab.com:district10/snippets_temporary.git
