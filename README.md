@@ -19,6 +19,8 @@
 
     (The above commands will search snippets in current directory, if you want to search in this repo, use `q`, `cq`, `viq`  respectively)
 
+    (We suppose code snippet is no more than 50 lines, if want something else, you can e.g. `export sm_n_line=100`)
+
     ---
 
     跨平台命令行代码片段管理工具
@@ -41,5 +43,7 @@
         sm keyword -G java                          # 只搜索 java 后缀的文本, 更多使用请参考 pt 的文档
 
     (上面的代码会在当前文件夹下搜代码片段, 想要搜本仓库下的代码片段, 可以相应地用 `q`, `cq` 或是 `viq`)
+
+    (我们假定了代码文件长度不超过 50, 你可以通过 `export sm_n_line` 来覆盖这个设置)
 
 ![](sm.gif)
