@@ -1,0 +1,8 @@
+FROM openjdk:8-jdk-alpine
+MAINTAINER name <email>
+
+COPY build/libs/app.jar /app/app.jar
+
+WORKDIR /app
+
+CMD java -jar app.jar
