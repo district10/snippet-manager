@@ -1,0 +1,6 @@
+# common ignore, gitignore
+.DS_Store
+*build*
+.iml
+.idea
+.vs_code
