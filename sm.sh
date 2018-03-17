@@ -36,21 +36,27 @@ function sm_clip() {
     (pbcopy || xclip -selection primary)
 }
 
+sm_grep_tool=`(pt --version &> /dev/null && echo "pt") || (ag --version &>/dev/null && echo "ag")`
+
+function sm_grep() {
+    $sm_grep_tool "$@"
+}
+
 function sm() {
     sm_guard $1 && export smtmp=`mktemp` && \
-        cat "$(sm_backwardlines $smtmp `pt -S --group "$@" | cat -n | tee $smtmp | percol | sm_linenum` | sm_reverse | sm_filename)" | \
-        pt -S -C ${sm_n_line:-50} "$@"
+        cat "$(sm_backwardlines $smtmp `sm_grep -S --group "$@" | cat -n | tee $smtmp | percol | sm_linenum` | sm_reverse | sm_filename)" | \
+        sm_grep -S -C ${sm_n_line:-50} "$@"
 }
 
 function csm() {
     sm_guard $1 && export smtmp=`mktemp` && \
-        cat "$(sm_backwardlines $smtmp `pt -S --group "$@" | cat -n | tee $smtmp | percol | sm_linenum` | sm_reverse | sm_filename)" | \
+        cat "$(sm_backwardlines $smtmp `sm_grep -S --group "$@" | cat -n | tee $smtmp | percol | sm_linenum` | sm_reverse | sm_filename)" | \
         sm_clip
 }
 
 function vism() {
     sm_guard $1 && export smtmp=`mktemp` && \
-        ${EDITOR:-vi} "$(sm_backwardlines $smtmp `pt -S --group "$@" | cat -n | tee $smtmp | percol | sm_linenum` | sm_reverse | sm_filename)"
+        ${EDITOR:-vi} "$(sm_backwardlines $smtmp `sm_grep -S --group "$@" | cat -n | tee $smtmp | percol | sm_linenum` | sm_reverse | sm_filename)"
 }
 
 export sm_dir="`dirname "$0"`"
