@@ -66,3 +66,6 @@ function viq() { (cd "$sm_dir"; vism $@) }
 function nq() {
     ${EDITOR:-vi} "$sm_dir/snippets/$1"
 }
+function lq() {
+    ${EDITOR:-vi} `find $sm_dir -type f \( -iname "*.*" ! -path "*/.*" \) | percol`
+}
