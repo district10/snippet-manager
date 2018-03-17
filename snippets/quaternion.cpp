@@ -1,4 +1,4 @@
-Eigen::Quaterniond q(w, x, y, z); q.normalize();
+Eigen::Quaterniond q(w, x, y, z); q.normalize(); // q.coeffs(), x,y,z,w
 Eigen::Isometry3d T(q);
 T.pretranslate(Eigen::Vector3d(x, y, z));
 
