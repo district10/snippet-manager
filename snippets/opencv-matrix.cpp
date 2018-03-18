@@ -1,3 +1,4 @@
+// Template class for small matrices whose type and size are known at compilation time, 大的矩阵用的是 Mat
 template<typename _Tp, int m, int n> class Matx {...};
 template<typename _Tp, int n> class Vec : public Matx<_Tp, n, 1> {...};
 template<typename _Tp> class CV_EXPORTS Scalar_ : public Vec<_Tp, 4>
