@@ -1,4 +1,5 @@
 typedef int Point;
+typedef Rect_<int> Rect;
 
 typedef struct {
     Point x, y;

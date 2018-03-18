@@ -14,7 +14,7 @@ cv::Mat img = cv::imread( IMAGE_INPUT_SRC /*, cv::IMREAD_COLOR*/ ); //  1
 //             IMREAD_REDUCED_GRAYSCALE_8  = 64,
 //             IMREAD_REDUCED_COLOR_8      = 65
 //           };
-if ( img.data == nullptr) {
+if ( img.data == nullptr) { // img.empty()
     // ...
 }
 cv::imshow( "src", img );
