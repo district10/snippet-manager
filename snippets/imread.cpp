@@ -1,6 +1,4 @@
-cv::Mat imgSrc = cv::imread( IMAGE_INPUT_SRC /*, cv::IMREAD_COLOR*/ ); //  1
-//                                               cv::IMREAD_GRAYSCALE  //  0
-//                                               cv::IMREAD_UNCHANGED  // -1
+cv::Mat img = cv::imread( IMAGE_INPUT_SRC /*, cv::IMREAD_COLOR*/ ); //  1
 //      //! Imread flags
 //      enum ImreadModes {
 //             IMREAD_UNCHANGED            = -1,
@@ -16,6 +14,8 @@ cv::Mat imgSrc = cv::imread( IMAGE_INPUT_SRC /*, cv::IMREAD_COLOR*/ ); //  1
 //             IMREAD_REDUCED_GRAYSCALE_8  = 64,
 //             IMREAD_REDUCED_COLOR_8      = 65
 //           };
-
-cv::imshow( "src", imgSrc );
-imgSrc.release();
+if ( img.data == nullptr) {
+    // ...
+}
+cv::imshow( "src", img );
+img.release();
