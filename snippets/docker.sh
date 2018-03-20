@@ -4,3 +4,5 @@ docker login <ip:port>
 docker logs
 docker logs --help
 docker pull tensorflow/tensorflow
+
+docker cp hash:/path/to/file host/path
