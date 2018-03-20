@@ -5,3 +5,5 @@ set( Boost_USE_STATIC_LIBS        OFF )
 set( Boost_USE_MULTITHREADED      ON )
 set( Boost_USE_STATIC_RUNTIME     OFF )
 set( BOOST_ALL_DYN_LINK           ON )
+
+target_link_libraries( exe ${Boost_LIBRARIES} )
