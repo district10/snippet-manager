@@ -60,6 +60,7 @@ function vism() {
 }
 
 export sm_dir="`dirname "$0"`"
+export sm_n_line="500"
 function q() { (cd "$sm_dir"; sm $@) }
 function cq() { (cd "$sm_dir"; csm $@) }
 function nq() { ${EDITOR:-vi} "$sm_dir/snippets/$1" }
