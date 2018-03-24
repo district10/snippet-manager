@@ -1,3 +1,4 @@
+# install: git checkout a621ff (non-template version)
 find_package( Sophus REQUIRED )
 include_directories( ${Sophus_INCLUDE_DIRS} )
 IF( NOT Sophus_LIBRARIES )
