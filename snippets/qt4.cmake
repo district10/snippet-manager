@@ -16,3 +16,7 @@ add_library( lib STATIC ${SRCS_FILES} ${UI_FILES} ${HDRS_FILES} ${MOC_SRCS} ${UI
 target_link_libraries( lib ${QT_LIBRARIES} )
 
 target_link_libraries( ${PROJECT_NAME} ${QT_LIBRARIES} lib )
+
+file( GLOB BT_RCS_RAW *.qrc )
+qt4_add_resources( BT_RCS ${BT_RCS_RAW} )
+add_executable( ${PROJECT_NAME} main.cpp ${BT_RCS} )
