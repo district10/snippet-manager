@@ -25,7 +25,13 @@ function sm_filename() {
 }
 
 function sm_usage() {
-    echo "Usage:\n\tsm <keyword>\t\t\t(search in current working directory/在当前所在目录搜索)\n\tq <keyword>\t\t\t(search in this folder/在本目录搜索)"
+    echo 'Usages:
+        q   <keyword>           # search snippet
+        cq  <keyword>           # search snippet, copy to clipboard
+        nq  <keyword>           # new (create) a snippet
+        lq  <keyword>           # list all snippets
+        viq <keyword>           # edit matched snippet
+    '
 }
 
 function sm_guard() {
