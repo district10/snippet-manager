@@ -7,3 +7,5 @@ convert \
     -filter Lanczos \
     -quality 85% \
     itput.jpg output.jpg
+
+# mogrify

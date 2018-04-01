@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Marked in the browser</title>
+    </head>
+    <body>
+        <div class="tzxMarked">
+(for better theme, use strapdown)
+# good
+**bad**
+## nice
+## terrible
+> quoted
+        </div>
+
+        <script src="https://cdn.bootcss.com/marked/0.3.19/marked.min.js"></script>
+        <script>
+            tzxMarkeds = document.getElementsByClassName('tzxMarked');
+            for ( var i = 0; i < tzxMarkeds.length; ++i ) {
+                m = tzxMarkeds[i];
+                ms = m.textContent;
+                console.log( ms );
+                m.innerHTML = marked( ms );
+            }
+        </script>
+    </body>
+</html>

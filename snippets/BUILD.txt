@@ -1,0 +1,43 @@
+# BUILD file
+load("//tools:cpplint.bzl", "cpplint")
+
+package(default_visibility = ["//visibility:public"])
+
+cc_library(
+    name = "canbus_lib",
+    srcs = ["canbus.cc"],
+    hdrs = ["canbus.h"],
+    deps = [
+        "//modules/canbus/can_client:can_client_factory",
+        "//modules/canbus/can_comm:can_receiver",
+        "//modules/canbus/can_comm:can_sender",
+        "//modules/canbus/vehicle:vehicle_factory",
+    ],
+)
+
+cc_test(
+    name = "canbus_test",
+    size = "small",
+    srcs = ["canbus_test.cc"],
+    deps = [
+        "//modules/canbus:canbus_lib",
+        "@gtest//:main",
+    ],
+)
+
+cc_binary(
+    name = "canbus",
+    srcs = ["main.cc"],
+    deps = [
+        ":canbus_lib",
+        "//external:gflags",
+        "//modules/canbus/can_client",
+    ],
+)
+
+filegroup(
+    name = "canbus_testdata",
+    srcs = glob(["testdata/**"]),
+)
+
+cpplint()

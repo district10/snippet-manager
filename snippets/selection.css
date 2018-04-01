@@ -1,0 +1,11 @@
+::selection {
+    color: #9ddcff;
+    background: black;
+}
+::-moz-selection {
+    color: #9ddcff;
+    background: black;
+}
+
+h1::selection { color: #9ddcff; }
+h1::-moz-selection { color: #9ddcff; }
