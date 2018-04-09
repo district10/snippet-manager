@@ -7,3 +7,5 @@ public:
             vec.push_back(*it);
     }
 };
+
+MagicFoo magicFoo = {1, 2, 3, 4, 5};
