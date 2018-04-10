@@ -1,0 +1,6 @@
+~/.ptconfig.toml
+
+    color = true
+    context = 3
+    ignore = ["dir1", "dir2"]
+    color-path = "1;34"
