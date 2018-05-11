@@ -45,6 +45,14 @@ function sm_clip() {
 export sm_grep_tool=`(pt --version &> /dev/null && echo "pt") || (ag --version &>/dev/null && echo "ag")`
 export sm_filter_tool=`(percol --version &> /dev/null && echo "percol") || (fzf --version &>/dev/null && echo "fzf")`
 
+function update_sm_filter_opts() {
+    if [ $sm_filter_tool="fzf" ]; then
+        opts="--reverse --no-sort"
+    else
+        opts=""
+    fi
+}
+
 function sm_grep() {
     $sm_grep_tool "$@"
 }
