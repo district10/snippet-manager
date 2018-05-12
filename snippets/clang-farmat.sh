@@ -103,3 +103,8 @@ $ clang-format -style=llvm -dump-config >> .clang-format
         clang-format -i $(MOD_SRCS)
     lintall:
         clang-format -i $(ALL_SRCS)
+
+# VS Code integration
+    -   install clang-format extension
+    -   control-shift-p, user settings, put config:
+            "editor.formatOnSave": true,
