@@ -39,7 +39,7 @@ function sm_guard() {
 }
 
 function sm_clip() {
-    (pbcopy || xclip -selection clipboard)
+    xclip -selection clipboard
 }
 
 export sm_grep_tool=`(pt --version &> /dev/null && echo "pt") || (ag --version &>/dev/null && echo "ag")`
