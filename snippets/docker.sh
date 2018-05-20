@@ -1,4 +1,4 @@
-docker build -t smart:v1 .
+docker build -t smart:v1 .                  # tag an image
 docker info
 docker login <ip:port>
 docker logs
