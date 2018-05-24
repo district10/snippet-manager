@@ -1,2 +1,2 @@
-" vim seq number appender
+" vim seq number appender increment number
 :s/$/\=line(".")-3/
