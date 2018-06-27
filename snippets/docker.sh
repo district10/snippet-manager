@@ -4,6 +4,7 @@ docker login <ip:port>
 docker logs
 docker logs --help
 docker pull tensorflow/tensorflow
+docker tag <hash> meaningful_img_name
 
 docker cp hash:/path/to/file host/path
 docker kill <hash>
