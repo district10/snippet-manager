@@ -83,5 +83,7 @@ export sm_n_line="500"
 function q() { (cd "$sm_dir"; sm $@) }
 function cq() { (cd "$sm_dir"; csm $@) }
 function nq() { ${EDITOR:-vi} "$sm_dir/snippets/$1" }
+function nqt() { ${EDITOR:-vi} "$sm_dir/temporary/$1" }
+function nqp() { ${EDITOR:-vi} "$sm_dir/private/$1" }
 function lq() { ${EDITOR:-vi} `find $sm_dir -type f \( -iname "*.*" ! -path "*/.*" \) | sm_filter` }
 function viq() { (cd "$sm_dir"; vism $@) }
