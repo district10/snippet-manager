@@ -1,3 +1,12 @@
+    Quick Try in Docker / 在 Docker 里试试
+    --------------------------------------
+
+        make dockerbuild
+        make dockerrun
+        zsh
+        q vector
+
+
     Cross-platform snippets manager (a command-line tool)
     -----------------------------------------------------
 
