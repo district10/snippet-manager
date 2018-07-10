@@ -1,0 +1,12 @@
+find_package(Boost)
+if(Boost_FOUND)
+    include_directories( ${Boost_INCLUDE_DIR} )
+    # all benchmarks
+    add_library(nonius SHARED benchmarks/nonius.cpp)
+    file(GLOB SRCS benchmarks/benchmark-*.cpp)
+    foreach(src ${SRCS})
+        string(REGEX REPLACE "(^.*/|.cpp$)" "" exe ${src})
+        add_executable(${exe} ${src})
+        target_link_libraries(${exe} utils nonius)
+    endforeach(src)
+endif()
