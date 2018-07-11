@@ -10,7 +10,13 @@ RUN cd /tmp && curl -L -o pt_linux_amd64.tar.gz "https://github.com/monochromega
     tar zxvf pt_linux_amd64.tar.gz && cp pt_linux_amd64/pt /bin
 RUN echo "source /workdir/sm.sh" >> /root/.zshrc
 
+RUN apt-get -y install locales
+RUN sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && locale-gen
+ENV LANG en_US.UTF-8  
+ENV LANGUAGE en_US:en  
+ENV LC_ALL en_US.UTF-8   
+
 WORKDIR /workdir
 ADD . /workdir
 
-CMD ["echo" ">> zsh<ENTER>"]
+CMD ["zsh"]
