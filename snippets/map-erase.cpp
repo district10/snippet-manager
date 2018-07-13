@@ -7,8 +7,10 @@ int main()
                                     {4, "four"}, {5, "five"}, {6, "six"}};
     // erase all odd numbers from c
     for(auto it = c.begin(); it != c.end(); )
-        if(it->first % 2 == 1)
+        if(it->first % 2 == 1) {
             it = c.erase(it);
+            // mit = c.erase(mit);
+        }
         else
             ++it;
     for(auto& p : c)
