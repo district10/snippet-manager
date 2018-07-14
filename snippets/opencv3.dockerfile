@@ -39,3 +39,4 @@ RUN wget https://bootstrap.pypa.io/get-pip.py && python get-pip.py
 RUN pip install requests pyyaml awscli
 
 RUN rm -rf /tmp/* /opencv
+# RUN rm -rf /var/lib/apt/lists/* # du -sh /var/lib/apt/lists
