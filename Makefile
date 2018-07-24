@@ -1,4 +1,4 @@
-all: docker
+all: try
 
 docker:
 	@echo make dockerbuild
@@ -10,6 +10,9 @@ dockerbuild:
 
 run: dockerrun
 dockerrun:
-	docker run -it snippet_manager sh
+	docker run -it snippet_manager zsh
 
-.PHONY: docker dockerbuild dockerrun
+try: dockerbuild dockerrun
+
+
+.PHONY: docker dockerbuild dockerrun try

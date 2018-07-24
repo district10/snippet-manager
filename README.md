@@ -1,10 +1,8 @@
     Quick Try in Docker / 在 Docker 里试试
     --------------------------------------
 
-        make dockerbuild
-        make dockerrun
-        zsh
-        q vector
+        make
+        q vector # q -> query, viq: edit query, cq: copy query to clipboard
 
 
     Cross-platform snippets manager (a command-line tool)
