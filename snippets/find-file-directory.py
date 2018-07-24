@@ -23,3 +23,10 @@ with open("filelist.txt", "w", encoding="utf-8") as file:
     for eachfile in os.listdir():
         mylist += eachfile + "\n"
     file.write(mylist)
+
+lines = []
+try:
+    with open("a.txt") as f :
+        lines = f.readlines()
+except IOError:
+    print 'oops'

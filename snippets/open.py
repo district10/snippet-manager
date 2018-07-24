@@ -1,3 +1,6 @@
-with open('file.txt') as f:
-    for line in f:
-        print line
+lines = []
+try:
+    with open('file.txt') as f:
+        lines = f.readlines()
+except IOError:
+    print "oops"

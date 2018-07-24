@@ -36,7 +36,7 @@ RUN cd /tmp && curl -O http://download.osgeo.org/proj/proj-4.9.3.tar.gz && \
     mkdir build && cd build && cmake .. && make && make install
 
 RUN wget https://bootstrap.pypa.io/get-pip.py && python get-pip.py
-RUN pip install requests pyyaml awscli
+RUN pip install requests pyyaml awscli # pip install yaml # python yaml
 
 RUN rm -rf /tmp/* /opencv
 # RUN rm -rf /var/lib/apt/lists/* # du -sh /var/lib/apt/lists
