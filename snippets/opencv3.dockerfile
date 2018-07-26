@@ -15,14 +15,15 @@ RUN echo "\n\
     deb http://security.ubuntu.com/ubuntu xenial-security universe\n\
     deb http://security.ubuntu.com/ubuntu xenial-security multiverse" > /etc/apt/sources.list
 
-RUN apt-get update && apt-get install -y \
-    build-essential cmake curl freeglut3-dev gfortran \
-    git libatlas-base-dev libavcodec-dev libavformat-dev \
-    libblas-dev libeigen3-dev libgl1-mesa-dev libglu1-mesa-dev \
-    libgtk2.0-dev libjasper-dev libjasper-dev libjpeg-dev \
-    liblapack-dev libpng-dev libswscale-dev \
-    libtiff-dev libv4l-dev libxi-dev libxmu-dev pkg-config \
-    python-dev unzip vim wget
+RUN apt-get update && apt-get install -y build-essential cmake curl git pkg-config unzip vim wget
+RUN apt-get install -y libboost-all-dev
+
+RUN apt-get install -y \
+    freeglut3-dev libatlas-base-dev \
+    libblas-dev libeigen3-dev libgl1-mesa-dev libglu1-mesa-dev
+RUN apt-get install -y \
+    libjpeg-dev liblapack-dev libpng-dev \
+    libtiff-dev libv4l-dev libxi-dev libxmu-dev
 
 # RUN git clone https://github.com/opencv/opencv.git /opencv && cd /opencv && git checkout 3.4
 RUN cd /tmp && wget http://7vzps8.com1.z0.glb.clouddn.com/opencv3_archive.zip && \
