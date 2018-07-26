@@ -18,5 +18,13 @@ ENV LC_ALL en_US.UTF-8
 
 WORKDIR /workdir
 ADD . /workdir
+# or use volume:
+#   Dockerfile:
+#   - ADD . /workdir
+#   Makefile:
+#   - docker run -it crowdsource_frontend zsh
+#   + docker run -v `pwd`:/workdir -it crowdsource_frontend zsh
+#
+#   Docker volume: https://docs.docker.com/storage/volumes/
 
 CMD ["zsh"]
