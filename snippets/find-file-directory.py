@@ -24,6 +24,11 @@ with open("filelist.txt", "w", encoding="utf-8") as file:
         mylist += eachfile + "\n"
     file.write(mylist)
 
+import codecs
+with codecs.open("test_output", "w", "utf-8") as temp:
+    temp.write("hi mom\n")
+    temp.write(u"This has ♭")
+
 lines = []
 try:
     with open("a.txt") as f :
