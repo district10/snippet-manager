@@ -2,8 +2,14 @@
     --------------------------------------
 
         make
-        q vector # q -> query, viq: edit query, cq: copy query to clipboard
+        q vector
 
+    Quick Local Install / 快速本地安装
+    ----------------------------------
+
+        bash ./install.sh
+        source ./sm.sh
+        q vector
 
     Cross-platform snippets manager (a command-line tool)
     -----------------------------------------------------
