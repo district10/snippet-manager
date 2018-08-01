@@ -1,0 +1,2 @@
+# color palette
+yellow      0xFFFF00
