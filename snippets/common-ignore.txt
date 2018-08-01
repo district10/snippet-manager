@@ -3,4 +3,10 @@
 *build*
 .iml
 .idea
-.vs_code
+.vscode
+*.py[cod]
+dist/
+sdist/
+*.egg-info/
+*.egg
+.tox

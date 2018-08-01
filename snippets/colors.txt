@@ -1,2 +1,2 @@
-# color palette
+# color palette, hex, common
 yellow      0xFFFF00
