@@ -1,0 +1,23 @@
+# vim unicode input
+
+1.  digraph
+
+    CTRL-K a:
+    CTRL-K e>
+
+    :digraphs
+
+    Ct ¢  162    Pd £  163    Cu ¤  164    Ye ¥  165
+    e! è  232    e' é  233    e> ê  234    e: ë  235
+
+2.  code endpoint, code point
+
+    我 ga: hex:6211  -> control-v u 6211
+
+    By decimal value: ^Vnnn (with 000 <= nnn <= 255)
+    By octal value: ^VOnnn or ^Vonnn (with 000 <= nnn <= 377)
+    By hex value: ^VXnn or ^Vxnn (with 00 <= nn <= FF)
+    By hex value for BMP Unicode codepoints: ^Vunnnn (with 0000 <= nnnn <= FFFF)
+    By hex value for any Unicode codepoint: ^VUnnnnnnnn (with 00000000 <= nnnnnnnn <= 7FFFFFFF)
+
+    :help i_CTRL-V_digit

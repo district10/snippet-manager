@@ -1,0 +1,67 @@
+alphabet, greek, roman alphabet -<
+
+:   | Letter | Letter Name | Pronunciation |
+    | :---: | :---: | :---: |
+    | A a | a | /ˈeɪ/ |
+    | B b | bee | /ˈbiː/ |
+    | C c | cee | /ˈsiː/ |
+    | D d | dee | /ˈdiː/ |
+    | E e | e | /ˈiː/ |
+    | F f | ef | /ˈɛf/ |
+    | G g | gee | /ˈdʒiː/ |
+    | H h | aitch | /ˈeɪtʃ/ |
+    | - - | haitch | /ˈheɪtʃ/ |
+    | - - | hetch | /ˈhetʃ/ |
+    | I i | i | /ˈaɪ/ |
+    | J j | jay | /ˈdʒeɪ/ |
+    | - - | jy | /ˈdʒaɪ/ |
+    | K k | kay | /ˈkeɪ/ |
+    | L l | el or ell | /ˈɛl/, /ˈɛɫ/ |
+    | M m | em | /ˈɛm/ |
+    | N n | en | /ˈɛn/ |
+    | O o | o | /ˈəʊ/ |
+    | P p | pee | /ˈpiː/ |
+    | Q q | cue | /ˈkjuː/ |
+    | R r | ar | /ˈɑː/ |
+    | S s | ess | /ˈɛs/ |
+    | T t | tee | /ˈtiː/ |
+    | U u | u | /ˈjuː/ |
+    | V v | vee | /ˈviː/ |
+    | W w | double-u | /ˈdʌbəl.juː/ |
+    | X x | ex | /ˈɛks/ |
+    | Y y | wy or wye | /ˈwaɪ/ |
+    | Z z | zed | /ˈzɛd/ |
+    | - - | zee | /ˈziː/ |
+    | - - | izzard | /ˈɪzərd/ |
+
+    Greek Alphabet
+
+    | Letter | Name | In LaTeX | Transliteration | Pronunciation |
+    | :---: | :---: | :----: | :--------------: | :--------------: |
+    | A α | [alpha][alpha] | - \alpha | a | [AL-fuh][p-alpha] |
+    | B β | [beta][beta] | - \beta | b | [BAY-tuh, BEE-tuh][p-beta] |
+    | Γ γ | [gamma][gamma] | \Gamma \gamma | g | [GAM-uh][p-gamma] |
+    | Δ δ | [delta][delta] | \Delta \delta | d | [DELL-tuh][p-delta] |
+    | E ϵ ε | [epsilon][epsilon] | - \epsilon \varepsilon | e | [EP-suh-lon][p-epsilon] |
+    | F ϝ ϛ | [digamma][digamma] | - \digamma [~~stigma~~][stigma] | f | dee-GAM-uh ? |
+    | Z ζ | [zeta][zeta] | - \zeta | z | [ZAY-tuh][p-zeta] |
+    | H η | [eta][eta] | \eta | ē | [AY-tuh][p-eta] |
+    | Θ θ ϑ | [theta][theta] | \Theta \theta \vartheta | th | [THAY-tuh, THEE-tuh][p-theta] |
+    | Ι ι | [iota][iota] | - \iota | i | [eye-OH-tuh][p-iota] |
+    | K κ ϰ | [kappa][kappa] | - \kappa \varkappa | k | [CAY-uh][p-kappa] |
+    | Λ λ | [lambda][lambda] | \Lambda \lambda | l | [LAM-duh][p-lambda] |
+    | M μ | [mu][mu] | - \mu | m | [MYOO, MOO][p-mu] |
+    | N ν | [nu][nu] | - \nu | n | [NOO, NYOO][p-nu] |
+    | Ξ ξ | [xi][xi] | \Xi \xi | x | [ZIGH, SIGN, KSEE][p-xi] |
+    | Ο ο | [omicron][omicron] | -  \omicron | o | [AH-mih-cron, OH-mih-cron][p-omicron] |
+    | Π π ϖ | [pi][pi] | \Pi \pi \varpi | p | [PIE][p-pi] |
+    | Ρ ρ ϱ | [rho][rho] | - \rho \varrho | r / rh | [ROE][p-rho] |
+    | Σ σ ς | [sigma][sigma] | \Sigma \sigma \varsigma | s | [SIG-muh][p-sigma] |
+    | T τ | [tau][tau] | - \tau | t | [TOW, TAW][p-tau] |
+    | Υ υ | [upsilon][upsilon] | \Upsilon \upsilon | u | [UP-suh-lon, YOOP-suh-lon][p-upsilon] |
+    | Φ ϕ φ | [phi][phi] | \Phi \phi \varphi | phi | [FIE, FEE][p-phi] |
+    | Χ χ | [chi][chi] | \chi | ch | [KIGN, KEE][p-chi] |
+    | Ψ ψ | [psi][psi] | \Psi \psi | ps | [SIGH, PSIGH, PSEE][p-psi] |
+    | Ω ω | [omega][omega] | \Omega \omega | ō | [oh-MEG-uh, oh-MEE-guh, oh-MAY-guh][p-omega] |
+
+https://github.com/joom/latex-unicoder.vim/blob/master/autoload/unicoder.vim
