@@ -15,11 +15,25 @@ function install_python() { $SUDO apt-get install -y python-dev; }
 function install_pip() { wget https://bootstrap.pypa.io/get-pip.py -O - | python; }
 function install_percol() { pip install percol; }
 
-curl --version 2&>/dev/null || install_curl
-wget --version 2&>/dev/null || install_wget
-pt --version 2&>/dev/null || install_pt
-python --version 2&>/dev/null || install_python
-pip --version 2&>/dev/null || install_pip
-percol --version 2&>/dev/null || install_percol
+case "$(uname -s)" in
+    Darwin)
+        echo 'Mac OS X'
+        brew install pt
+        pip install percol
+        echo "Installation Done"
+    ;;
+    Linux)
+        echo 'Linux'
+        curl --version 2&>/dev/null || install_curl
+        wget --version 2&>/dev/null || install_wget
+        pt --version 2&>/dev/null || install_pt
+        python --version 2&>/dev/null || install_python
+        pip --version 2&>/dev/null || install_pip
+        percol --version 2&>/dev/null || install_percol
+        echo "Installation Done"
+    ;;
 
-echo "Installation Done"
+    *)
+        echo 'Not Linux nor macOS? You man need to manually install pt and percol'
+    ;;
+esac
