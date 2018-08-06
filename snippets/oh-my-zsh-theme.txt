@@ -1,0 +1,2 @@
+ export ZSH_THEME="dpoggi"
+powerlevel9k/powerlevel9k
