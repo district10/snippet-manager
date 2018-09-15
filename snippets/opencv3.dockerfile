@@ -4,16 +4,16 @@ FROM ubuntu:16.04
 ENV OpenCV_DIR=/usr/local/share/OpenCV
 
 RUN echo "\n\
-    deb http://cn.archive.ubuntu.com/ubuntu/ xenial main restricted\n\
-    deb http://cn.archive.ubuntu.com/ubuntu/ xenial-updates main restricted\n\
-    deb http://cn.archive.ubuntu.com/ubuntu/ xenial universe\n\
-    deb http://cn.archive.ubuntu.com/ubuntu/ xenial-updates universe\n\
-    deb http://cn.archive.ubuntu.com/ubuntu/ xenial multiverse\n\
-    deb http://cn.archive.ubuntu.com/ubuntu/ xenial-updates multiverse\n\
-    deb http://cn.archive.ubuntu.com/ubuntu/ xenial-backports main restricted universe multiverse\n\
-    deb http://security.ubuntu.com/ubuntu xenial-security main restricted\n\
-    deb http://security.ubuntu.com/ubuntu xenial-security universe\n\
-    deb http://security.ubuntu.com/ubuntu xenial-security multiverse" > /etc/apt/sources.list
+deb http://cn.archive.ubuntu.com/ubuntu/ xenial main restricted\n\
+deb http://cn.archive.ubuntu.com/ubuntu/ xenial-updates main restricted\n\
+deb http://cn.archive.ubuntu.com/ubuntu/ xenial universe\n\
+deb http://cn.archive.ubuntu.com/ubuntu/ xenial-updates universe\n\
+deb http://cn.archive.ubuntu.com/ubuntu/ xenial multiverse\n\
+deb http://cn.archive.ubuntu.com/ubuntu/ xenial-updates multiverse\n\
+deb http://cn.archive.ubuntu.com/ubuntu/ xenial-backports main restricted universe multiverse\n\
+deb http://security.ubuntu.com/ubuntu xenial-security main restricted\n\
+deb http://security.ubuntu.com/ubuntu xenial-security universe\n\
+deb http://security.ubuntu.com/ubuntu xenial-security multiverse" > /etc/apt/sources.list
 
 RUN apt-get update && apt-get install -y build-essential cmake curl git pkg-config unzip vim wget
 RUN apt-get install -y libboost-all-dev

@@ -17,6 +17,15 @@ def utm2lla(xyz, zone):
     return transform(pj_utm, pj_lla, x, y, z)
 
 
+# 3 degree, 3°
+# From UTM coordinates (E, N) to latitude, longitude (φ, λ)
+def utm3_to_lla(xyz):
+    x, y, z = xyz
+    pj_utm = Proj(proj="tmerc", lat_0=0, lon_0=117, x_0=500000, y_0=0)
+    pj_lla = Proj(proj="longlat", ellps="WGS84", datum="WGS84")
+    return transform(pj_utm, pj_lla, x, y, z)
+
+
 def ecef2utm(xyz):
     x, y, z = xyz
     lon = math.degrees(math.atan2(y, x))

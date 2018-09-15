@@ -1,0 +1,13 @@
+# wgs84, crs4326, spatial reference system (SRS) or coordinate reference system (CRS)
+The WGS 84 spatial reference system describes Earth as an oblate spheroid along
+north-south axis with an equatorial radius of {\displaystyle a=6378.137}
+a=6378.137 km and an inverse flattening of {\displaystyle
+1/f=298.257\,223\,563} 1/f=298.257\,223\,563. Let's take a point of latitude
+{\displaystyle \,\varphi} \,\varphi  and of longitude {\displaystyle \,\lambda}
+\,\lambda  and compute its UTM coordinates as well as point scale factor
+{\displaystyle k\,\!} k\,\! and meridian convergence {\displaystyle \gamma
+\,\!} \gamma \,\! using a reference meridian of longitude {\displaystyle
+\lambda _{0}} \lambda _{0}. By convention, in the northern hemisphere
+{\displaystyle N_{0}=0} N_{{0}}=0 km and in the southern hemisphere
+{\displaystyle N_{0}=10000} N_{{0}}=10000 km. By convention also {\displaystyle
+k_{0}=0.9996} k_{{0}}=0.9996 and {\displaystyle E_{0}=500} E_{{0}}=500 km.

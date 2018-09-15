@@ -43,3 +43,29 @@ http://geojson.io/#map=18/39.91580/116.39082
     }
   ]
 }
+
+
+def geojson(features):
+    geojson = json.loads("""
+        {
+            "type": "FeatureCollection",
+            "features": []
+        }
+    """)
+    geojson["features"] = features
+    return geojson
+
+
+def geojson_line(points):
+    line = json.loads("""
+        {
+            "type": "Feature",
+            "properties": {},
+            "geometry": {
+                "type": "LineString",
+                "coordinates": []
+            }
+        }
+    """)
+    line["geometry"]["coordinates"] = points
+    return line

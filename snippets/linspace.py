@@ -1,0 +1,6 @@
+>>> np.linspace(2.0, 3.0, num=5)
+array([ 2.  ,  2.25,  2.5 ,  2.75,  3.  ])
+>>> np.linspace(2.0, 3.0, num=5, endpoint=False)
+array([ 2. ,  2.2,  2.4,  2.6,  2.8])
+>>> np.linspace(2.0, 3.0, num=5, retstep=True)
+(array([ 2.  ,  2.25,  2.5 ,  2.75,  3.  ]), 0.25)

@@ -1,0 +1,12 @@
+// absolute positioning
+.image {
+    height: 300px;
+    width: 480px;
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    box-shadow: 0 0 25px 10px rgba(155, 155, 155, 0.3);
+}
+.image:hover {
+    box-shadow: 0 0 25px 10px rgba(155, 155, 155, 0.8);
+}
