@@ -1,0 +1,2 @@
+# C-b :
+:set-window-option mode-keys vi
