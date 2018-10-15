@@ -15,3 +15,12 @@ rsync -avzhe ssh root@192.168.0.100:/root/install.log /tmp/
 --exclude '*'
 --max-size='200k'
 --dry-run
+
+function rsync_bag {
+    rsync -arv \
+        --exclude='file.txt' \
+        --exclude='result_*/' \
+        --exclude='map_result*' \
+        $1 ./
+}
+
