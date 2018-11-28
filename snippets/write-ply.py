@@ -4,6 +4,6 @@ def write_ply_lines(lines, out_path):
                "property uint8 red", "property uint8 green", "property uint8 blue", "end_header"]
     strings.extend([" ".join([str(x) for x in line]) for line in lines])
     text = "\n".join(strings)
-    with open(out_path, "w") as f:
+    with open(out_path, "w") as f: # "w", write anyway, "x" write if file not exists
         f.write(text)
         f.write("\n")
