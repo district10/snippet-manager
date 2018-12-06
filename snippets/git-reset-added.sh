@@ -5,3 +5,5 @@ git clean -fdx :/               # remove untracked, including ignored files in w
 
 git checkout HEAD -- file.txt   # reset one file
 git checkout @    -- file.txt   # same as above
+
+git submodule update --init     # reset hard HEAD submodules

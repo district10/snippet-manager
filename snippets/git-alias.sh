@@ -34,6 +34,7 @@ alias gcf='git config --list'
 alias gcl='git clone --recursive'
 alias gclean='git clean -fd'
 alias gpristine='git reset --hard && git clean -dfx'
+git submodule update --init # reset hard submodule
 alias gcm='git checkout master'
 alias gcd='git checkout develop'
 alias gcmsg='git commit -m'
