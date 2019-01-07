@@ -13,7 +13,7 @@ function install_wget() { $SUDO apt-get install -y wget; }
 function install_pt() { cd /tmp && curl -L -o pt_linux_amd64.tar.gz "$PT_URL" && tar zxvf pt_linux_amd64.tar.gz && $SUDO cp pt_linux_amd64/pt /bin; }
 function install_python() { $SUDO apt-get install -y python-dev; }
 function install_pip() { wget https://bootstrap.pypa.io/get-pip.py -O - | python; }
-function install_percol() { pip install percol; }
+function install_percol() { pip install percol --user; }
 
 case "$(uname -s)" in
     Darwin)
