@@ -1,0 +1,2 @@
+options.logging_type = ceres::SILENT;
+Solver::Options::logging_type = SILENT;
