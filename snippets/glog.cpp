@@ -1,0 +1,1 @@
+LOG_EVERY_N(INFO, 100) << google::COUNTER;
